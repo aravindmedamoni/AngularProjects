@@ -1,0 +1,16 @@
+i.pending{
+    color: orangered;
+}
+i.completed{
+    color: green;
+}
+
+p.completed{
+    font-size: 18px;
+    text-decoration: line-through;
+    text-decoration-thickness: 4px;
+}
+
+div.hightLight{
+    background-color: lightskyblue;
+}

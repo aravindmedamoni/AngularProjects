@@ -1,0 +1,50 @@
+
+<div class="row mt-5">
+    <div class="col-xs-12">
+        <div class="border-right-2">
+            <form #authForm="ngForm" (ngSubmit)="onSubmit()">
+
+                <div class="row" *ngIf="!isLoginMode">
+                    <div class="col-xs-5">
+                        <div class="form-group">
+                            <label for="username"> <strong>Username</strong> </label>
+                            <input type="text" class="form-control" id="username" required name="username" ngModel #username="ngModel">
+                            <span *ngIf="username.invalid && username.touched">Please enter your username</span>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-5">
+                        <div class="form-group">
+                            <label for="email"> <strong>Email</strong> </label>
+                            <input type="email" class="form-control" id="email" required name="email" ngModel #email="ngModel">
+                            <span *ngIf="email.invalid && email.touched">Please enter your email</span>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                  <div class="row mt-2">
+                      <div class="col-xs-12">
+                          <div class="form-group">
+                              <label for="password"> <strong>password</strong> </label>
+                              <input type="password" class="form-control" id="password" required name="password" ngModel #password="ngModel" [minlength]="6" >
+                              <span *ngIf="password.invalid && password.touched">Please enter your password</span>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="row  mt-5">
+                      <div class="form-group">
+                        <button class="btn btn-primary" type="submit" [disabled]="authForm.invalid"> {{isLoginMode ? "Login" : "Sign Up"}} </button>  
+                        <button class="btn btn-danger mx-3" type="button" (click)= "switchMode()">Swith to {{isLoginMode ? "Sign Up" : "Login"}} </button>
+                      </div>
+                  </div>
+            </form> 
+        </div>       
+  </div>
+ 
+</div>
+     

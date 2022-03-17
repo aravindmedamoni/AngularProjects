@@ -1,0 +1,33 @@
+
+<div class="row">
+    <div class="col-xs-12">
+       <div style="text-align: center;">
+        <app-loading *ngIf="isLoading"></app-loading>
+       </div>
+        <div *ngFor="let todo of todos; let i=index">
+                <div [class]="i===itemIndex?'hightLight':''" class="list-group-item clearfix m-2 rounded-2 border-dark">
+                    <div (click)="onSelect(i)">
+                        <strong class="list-group-item-heading clearfix"> {{todo.title}} </strong>
+                        <p class="list-group-item-text {{todo.status}}"> {{todo.text}} </p>
+                        <i [class]="todo.status"> {{todo.status}} </i>
+                    </div>
+                    <div style="text-align: right;">
+                        <button class="btn btn-danger" type="button" (click)="onDelete(i)">Delete</button>
+                    </div>
+                </div>
+        </div>
+        <!-- <a class="list-group-item clearfix">
+            <div>
+                <strong class="list-group-item-heading">Title</strong>
+                <p class="list-group-item-text">Text</p>
+            </div>
+        </a>
+        
+        <a>
+            <div class="list-group-item clearfix">
+                <strong class="list-group-item-heading">Title</strong>
+                <p class="list-group-item-text">Text</p>
+            </div>
+        </a> -->
+    </div>
+</div>

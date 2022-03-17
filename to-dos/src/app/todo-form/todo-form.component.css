@@ -1,0 +1,17 @@
+label{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+label.radioBtn{
+    font-size: 14px;
+    font-weight: bold;
+}
+
+input.ng-invalid.ng-touched{
+    border: 2px solid orangered;
+}
+
+span{
+    color: orangered;
+}
